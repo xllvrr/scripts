@@ -25,4 +25,4 @@ case "$choice" in
     ;;
 esac
 
-nvim -c "$choice"
+nvim "$choice"
