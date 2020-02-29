@@ -4,7 +4,8 @@ declare options=("zsh
 neovim
 sxhkd
 xresources
-polybar")
+polybar
+lf")
 
 choice=$(echo -e "${options[@]}" | dmenu -i -p 'Edit config file: ')
 
@@ -23,6 +24,9 @@ case "$choice" in
     ;;
     polybar)
         choice="$HOME/.config/polybar/config"
+    ;;
+    lf)
+        choice="$HOME/.config/lf/lfrc"
     ;;
     *)
         exit 1
