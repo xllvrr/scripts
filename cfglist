@@ -7,7 +7,8 @@ sxhkd
 bspwm
 xresources
 polybar
-lf")
+lf
+aliases")
 
 choice=$(echo -e "${options[@]}" | dmenu -i -h 30 -p 'Edit config file: ')
 
@@ -35,6 +36,9 @@ case "$choice" in
     ;;
     lf)
         choice="$HOME/.config/lf/lfrc"
+    ;;
+    aliases)
+        choice="$HOME/.config/.aliases"
     ;;
     *)
         exit 1
