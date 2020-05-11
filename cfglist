@@ -8,7 +8,8 @@ bspwm
 xresources
 polybar
 lf
-aliases")
+aliases
+alacritty")
 
 choice=$(echo -e "${options[@]}" | dmenu -i -h 30 -p 'Edit config file: ')
 
@@ -39,6 +40,9 @@ case "$choice" in
     ;;
     aliases)
         choice="$HOME/.config/.aliases"
+    ;;
+    alacritty)
+        choice="$HOME/.config/alacritty/alacritty.yml"
     ;;
     *)
         exit 1
