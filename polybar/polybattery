@@ -2,7 +2,7 @@
 # Simple script to output battery level formatted for polybar
 
 bat_number=0
-acpi=$(acpi -b 2>/dev/null| grep "Battery $bat_number")
+acpi=$(acpi -b | sed -e 's/\(:[0-9]\+ \)/ /g' 2>/dev/null| grep "Battery $bat_number")
 ac_adapt=$(acpi -a | awk '{print $2}')
 mode=$(echo "$acpi" | awk '{print $3}')
 percent=$(echo "$acpi" | awk '{print $4}'| grep -Eo '[0-9]*')
