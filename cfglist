@@ -5,6 +5,7 @@ env
 neovim
 sxhkd
 bspwm
+dunst
 xresources
 polybar
 lf
@@ -43,6 +44,9 @@ case "$choice" in
     ;;
     alacritty)
         choice="$HOME/.config/alacritty/alacritty.yml"
+    ;;
+    dunst)
+        choice="$HOME/.config/dunst/dunstrc"
     ;;
     *)
         exit 1
