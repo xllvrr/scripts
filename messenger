@@ -1,0 +1,3 @@
+#!/bin/bash
+
+$BROWSER web.telegram.org web.whatsapp.com drive.google.com calendar.google.com maps.google.com
