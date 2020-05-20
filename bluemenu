@@ -1,0 +1,38 @@
+#!/bin/sh
+
+declare options=("Connect
+Pair
+Scan
+Discoverable
+Pairable
+")
+
+choice=$(echo -e "${options[@]}" | dmenu -i -h 30 -p 'What would you like to do: ')
+
+# device=$(echo "devices" | bluetoothctl | awk '$1 == "Device"' | 
+#     dmenu -i -h 30 -p 'Pick a device: ' | awk -F' ' '{print $2}')
+
+case "$choice" in
+    Connect)
+        choice="connect $(echo "devices" | bluetoothctl | awk '$1 == "Device"' | 
+    dmenu -i -h 30 -p 'Pick a device: ' | awk -F' ' '{print $2}')"
+    ;;
+    Pair)
+        choice="pair $(echo "devices" | bluetoothctl | awk '$1 == "Device"' | 
+    dmenu -i -h 30 -p 'Pick a device: ' | awk -F' ' '{print $2}')"
+    ;;
+    Scan)
+        choice="scan on"
+    ;;
+    Discoverable)
+        choice="discoverable on"
+    ;;
+    Pairable)
+        choice="pairable on"
+    ;;
+    *)
+        exit 1
+    ;;
+esac
+
+$TERMINAL -e bluetoothctl $choice
