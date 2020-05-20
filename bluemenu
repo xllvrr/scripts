@@ -14,25 +14,28 @@ choice=$(echo -e "${options[@]}" | dmenu -i -h 30 -p 'What would you like to do:
 
 case "$choice" in
     Connect)
-        choice="connect $(echo "devices" | bluetoothctl | awk '$1 == "Device"' | 
+        perform="connect $(echo "devices" | bluetoothctl | awk '$1 == "Device"' | 
     dmenu -i -h 30 -p 'Pick a device: ' | awk -F' ' '{print $2}')"
     ;;
     Pair)
-        choice="pair $(echo "devices" | bluetoothctl | awk '$1 == "Device"' | 
+        perform="pair $(echo "devices" | bluetoothctl | awk '$1 == "Device"' | 
     dmenu -i -h 30 -p 'Pick a device: ' | awk -F' ' '{print $2}')"
+        notify-send "Bluetooth Pairing" "$(bluetoothctl $perform)"
     ;;
     Scan)
-        choice="scan on"
+        perform="scan on"
     ;;
     Discoverable)
-        choice="discoverable on"
+        perform="discoverable on"
+        notify-send "Bluetooth Discoverable" "$(bluetoothctl $perform)"
     ;;
     Pairable)
-        choice="pairable on"
+        perform="pairable on"
+        notify-send "Bluetooth Pairable" "$(bluetoothctl $perform)"
     ;;
     *)
         exit 1
     ;;
 esac
 
-$TERMINAL -e bluetoothctl $choice
+$TERMINAL -e bluetoothctl $perform
