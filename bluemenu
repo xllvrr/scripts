@@ -2,6 +2,7 @@
 
 declare options=("Connect
 Pair
+Disconnect
 Scan
 Discoverable
 Pairable
@@ -9,12 +10,13 @@ Pairable
 
 choice=$(echo -e "${options[@]}" | dmenu -i -h 30 -p 'What would you like to do: ')
 
-# device=$(echo "devices" | bluetoothctl | awk '$1 == "Device"' | 
-#     dmenu -i -h 30 -p 'Pick a device: ' | awk -F' ' '{print $2}')
-
 case "$choice" in
     Connect)
         perform="connect $(echo "devices" | bluetoothctl | awk '$1 == "Device"' | 
+    dmenu -i -h 30 -p 'Pick a device: ' | awk -F' ' '{print $2}')"
+    ;;
+    Disconnect)
+        perform="disconnect $(echo "devices" | bluetoothctl | awk '$1 == "Device"' | 
     dmenu -i -h 30 -p 'Pick a device: ' | awk -F' ' '{print $2}')"
     ;;
     Pair)
