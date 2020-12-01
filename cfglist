@@ -37,9 +37,6 @@ case "$choice" in
     polybar)
         choice="$HOME/.config/polybar/config"
     ;;
-    lf)
-        choice="$HOME/.config/lf/lfrc"
-    ;;
     aliases)
         choice="$HOME/.config/.aliases"
     ;;
