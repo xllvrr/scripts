@@ -1,6 +1,6 @@
 #!/bin/bash
 
-choice="$(dmenu -h 30 -i -p "Edit config file: " << !
+choice="$(rofi -dmenu -i -p "Edit config file: " << !
 zsh
 env
 neovim
