@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+crontab -l > $HOME/.config/my_cron.backup
+config add $HOME/.config/my_cron.backup
+config commit -m "Crontab Backup"
