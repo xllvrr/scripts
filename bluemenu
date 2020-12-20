@@ -8,20 +8,20 @@ Discoverable
 Pairable
 ")
 
-choice=$(echo -e "${options[@]}" | rofi -dmenu -i -h 30 -p 'What would you like to do: ')
+choice=$(echo -e "${options[@]}" | rofi -dmenu -i -p 'What would you like to do: ')
 
 case "$choice" in
     Connect)
         perform="connect $(echo "devices" | bluetoothctl | awk '$1 == "Device"' | 
-    rofi -dmenu -i -h 30 -p 'Pick a device: ' | awk -F' ' '{print $2}')"
+    rofi -dmenu -i -p 'Pick a device: ' | awk -F' ' '{print $2}')"
     ;;
     Disconnect)
         perform="disconnect $(echo "devices" | bluetoothctl | awk '$1 == "Device"' | 
-    rofi -dmenu -i -h 30 -p 'Pick a device: ' | awk -F' ' '{print $2}')"
+    rofi -dmenu -i -p 'Pick a device: ' | awk -F' ' '{print $2}')"
     ;;
     Pair)
         perform="pair $(echo "devices" | bluetoothctl | awk '$1 == "Device"' | 
-    rofi -dmenu -i -h 30 -p 'Pick a device: ' | awk -F' ' '{print $2}')"
+    rofi -dmenu -i -p 'Pick a device: ' | awk -F' ' '{print $2}')"
         notify-send "Bluetooth Pairing" "$(bluetoothctl $perform)"
     ;;
     Scan)
