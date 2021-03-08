@@ -12,7 +12,7 @@
 set -e
 
 MICROPHONE=${MICROPHONE:-"alsa_input.usb-Audio-Technica_AT2005USB-00.analog-stereo"}
-SPEAKERS=${SPEAKERS:-"alsa_input.usb-Audio-Technica_AT2005USB-00.analog-stereo"}
+SPEAKERS=${SPEAKERS:-"alsa_output.usb-Audio-Technica_AT2005USB-00.analog-stereo"}
 
 module_file="/tmp/pulseaudio_module_list.txt"
 
@@ -36,3 +36,6 @@ pactl load-module module-null-sink sink_name=virtual2 sink_properties=device.des
 pactl load-module module-loopback source=virtual1.monitor sink="${SPEAKERS}" latency_msec=1 >> "${module_file}"
 pactl load-module module-loopback source=virtual1.monitor sink=virtual2 latency_msec=1 >> "${module_file}"
 pactl load-module module-loopback source="${MICROPHONE}" sink=virtual2 latency_msec=1 >> "${module_file}"
+
+# Remap the source so that it can be detected as an input
+pactl load-module module-remap-source master=virtual2.monitor source_name=VirtualMic source_properties=device.description=VirtualMic
