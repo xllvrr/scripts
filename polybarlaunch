@@ -8,4 +8,7 @@ while pgrep -u $(id -ru) -x polybar > /dev/null; do
 sleep 1; done
 
 # Launch polybar
-polybar example -r &
+case $HOSTNAME in
+    (archmain) polybar example -r &;;
+    (archthink) polybar example -r &;;
+esac
