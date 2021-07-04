@@ -1,6 +1,6 @@
 #!/bin/sh
 
 case $HOSTNAME in
-    (archmain) rofi -show drun -theme center;;
-    (archthink) rofi -show drun -theme center;;
+    (archmain) rofi -show drun -theme centermain;;
+    (archthink) rofi -show drun -theme centerthink;;
 esac
