@@ -1,0 +1,6 @@
+#!/bin/sh
+
+case $HOSTNAME in
+    (archmain) cp ~/.config/alacritty/alacrittymain.yml ~/.config/alacritty/alacritty.yml;;
+    (archthink) cp ~/.config/alacritty/alacrittythink.yml ~/.config/alacritty/alacritty.yml;;
+esac
