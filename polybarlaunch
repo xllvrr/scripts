@@ -9,6 +9,6 @@ sleep 1; done
 
 # Launch polybar
 case $HOSTNAME in
-    (archmain) polybar example -r &;;
-    (archthink) polybar example -r &;;
+    (archmain) polybar archmain -r &;;
+    (archthink) polybar archthink -r &;;
 esac
