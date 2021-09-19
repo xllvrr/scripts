@@ -4,9 +4,6 @@ choice="$(rofi -dmenu -i -p "Edit config file: " << !
 zsh
 env
 neovim
-sxhkd
-bspwm
-dunst
 xresources
 polybar
 lf
@@ -25,12 +22,6 @@ case "$choice" in
     neovim)
         choice="$HOME/.config/nvim/init.vim"
     ;;
-    sxhkd)
-        choice="$HOME/.config/sxhkd/sxhkdrc"
-    ;;
-    bspwm)
-        choice="$HOME/.config/bspwm/bspwmrc"
-    ;;
     xresources)
         choice="$HOME/.Xresources"
     ;;
@@ -42,9 +33,6 @@ case "$choice" in
     ;;
     alacritty)
         choice="$HOME/.config/alacritty/alacritty.yml"
-    ;;
-    dunst)
-        choice="$HOME/.config/dunst/dunstrc"
     ;;
     *)
         exit 1
