@@ -1,0 +1,6 @@
+#!/bin/sh
+
+while true; do
+    xdotool key e --delay 400
+    xdotool key r --delay 1200
+done
