@@ -20,7 +20,7 @@ case "$choice" in
         choice="$HOME/.zshenv"
     ;;
     neovim)
-        choice="$HOME/.config/nvim/init.vim"
+        choice="$HOME/.config/nvim/init.lua"
     ;;
     xresources)
         choice="$HOME/.Xresources"
