@@ -4,5 +4,5 @@ while true; do
     xdotool key e
     sleep 0.5
     xdotool key r
-    sleep 1.9
+    sleep 1.5
 done
