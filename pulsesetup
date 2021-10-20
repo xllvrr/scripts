@@ -11,8 +11,8 @@
 
 set -e
 
-MICROPHONE=${MICROPHONE:-"alsa_input.usb-Audio-Technica_AT2005USB-00.analog-stereo"}
-SPEAKERS=${SPEAKERS:-"alsa_output.usb-Audio-Technica_AT2005USB-00.analog-stereo"}
+MICROPHONE=${MICROPHONE:-"alsa_input.usb-PreSonus_AudioBox_USB_96_000000000000-00.analog-stereo"}
+SPEAKERS=${SPEAKERS:-"alsa_output.usb-PreSonus_AudioBox_USB_96_000000000000-00.analog-stereo"}
 
 module_file="/tmp/pulseaudio_module_list.txt"
 
