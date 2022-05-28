@@ -6,7 +6,7 @@
 # highlighting an area to copy. scrotcucks on suicidewatch right now.
 
 case "$(printf "a selected area\\ncurrent window\\nfull screen" | rofi -dmenu -lines 6 -i -p "Screenshot which area?")" in
-	"a selected area") scrot -d 0.5 -s pic-selected-"$(date '+%y%m%d-%H%M-%S').png" -e 'xclip -selection clipboard -t image/png -i $f && mv $f ~/shots/' ;;
+	"a selected area") scrot -d 0.7 -s pic-selected-"$(date '+%y%m%d-%H%M-%S').png" -e 'xclip -selection clipboard -t image/png -i $f && mv $f ~/shots/' ;;
 	"current window") scrot -u pic-window-"$(date '+%y%m%d-%H%M-%S').png" -e 'xclip -selection clipboard -t image/png -i $f && mv $f ~/shots/'  ;;
 	"full screen") scrot pic-full-"$(date '+%y%m%d-%H%M-%S').png" -e 'xclip -selection clipboard -t image/png -i $f && mv $f ~/shots/'  ;;
 esac
