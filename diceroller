@@ -1,9 +1,0 @@
-#!/bin/sh
-
-read -p "How many dice? " number
-read -p "What dice size? " size
-
-for ((i=0; i<$size; i++))
-do
-    awk -v min=1 -v max=$number 'BEGIN{srand(); print int(mind+rand()*(max-min+1))}'
-done
