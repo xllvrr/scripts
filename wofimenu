@@ -1,0 +1,6 @@
+#!/bin/sh
+
+case $HOSTNAME in
+    (archmain) wofi --show run -c ~/.config/wofi/themes/centermain;;
+    (archthink) wofi --show run -c ~/.config/wofi/themes/centerthink;;
+esac
