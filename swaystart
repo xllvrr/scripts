@@ -2,11 +2,7 @@
 
 case $HOSTNAME in
     (archmain) cp -f ~/.config/alacritty/alacrittymain.yml ~/.config/alacritty/alacritty.yml &&
-        cp -f ~/.config/fcitx5/conf/uimain.conf ~/.config/fcitx5/conf/classicui.conf &&
-        cp -f ~/.config/waybar/archmain ~/.config/waybar/config &&
         exec sway ;;
     (archthink) cp -f ~/.config/alacritty/alacrittythink.yml ~/.config/alacritty/alacritty.yml && 
-        cp -f ~/.config/fcitx5/conf/uithink.conf ~/.config/fcitx5/conf/classicui.conf && 
-        cp -f ~/.config/waybar/archthink ~/.config/waybar/config && 
         exec sway ;;
 esac
