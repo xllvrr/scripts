@@ -1,7 +1,7 @@
 #!/bin/bash
 
 case "$(printf "a selected area\\ncurrent window\\nfull screen" | fuzzel -d -b 282c34ff -s 000000ff -S 74bb80ff -t 74bb80ff -C 74bba4ff -B 2 -P 'Screenshot which area?')" in
-    "a selected area") path="$HOME/shots/pic-selected-$(date +%y%m%d-%H%M-%S)" && 
+    "a selected area") path="$HOME/shots/pic-selected-$(date +%y%m%d-%H%M-%S).png" && 
         grim -g "$(slurp)" $path &&
         wl-copy < $path;;
 	"current window") path="$HOME/shots/pic-window-$(date +%y%m%d-%H%M-%S).png" &&
