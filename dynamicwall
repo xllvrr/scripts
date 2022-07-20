@@ -1,0 +1,14 @@
+#!/bin/bash
+
+while true
+do
+
+      PIC=($(find ~/.config/wallpapers -type f | shuf -n 2 --random-source=/dev/random))
+
+      swaymsg output "DP-2" bg "${PIC[0]}" fill > /dev/null
+      swaymsg output "DP-3" bg "${PIC[1]}" fill > /dev/null
+      swaymsg output "LVDS-1" bg "${PIC[0]}" fill > /dev/null
+
+      sleep 60m
+
+done
