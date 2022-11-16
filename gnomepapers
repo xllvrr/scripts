@@ -1,0 +1,19 @@
+#!/bin/sh
+
+export wall_path=./config/wallpapers
+shopt -s nullglob
+
+wallpapers=(
+    $wall_path/*.jpg
+    $wall_path/*.jpeg
+    $wall_path/*.png
+        )
+
+wall_size=${#wallpapers[*]}
+
+while true
+do
+    random_idx=$(($RANDOM % $wall_size))
+    gsettings set org.gnome.desktop.background picture-uri ${wallpapers[random_idx]}
+    sleep 15m
+done
