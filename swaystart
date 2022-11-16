@@ -1,8 +1,0 @@
-#!/bin/sh
-
-case $HOSTNAME in
-    (archmain) cp -f ~/.config/alacritty/alacrittymain.yml ~/.config/alacritty/alacritty.yml &&
-        exec sway ;;
-    (archthink) cp -f ~/.config/alacritty/alacrittythink.yml ~/.config/alacritty/alacritty.yml && 
-        exec sway ;;
-esac
