@@ -3,8 +3,8 @@
 tmpfile=$(mktemp)
 destfile=$(mktemp)
 
-wget -q https://carddav.fastmail.com/dav/addressbooks/user/ben@bencode.io/Default \
-    --user dtsa@fastmail.com \
+wget -q https://carddav.fastmail.com/dav/addressbooks/user/dan@dtsa.email/Default \
+    --user dan@dtsa.email \
     --password $(pass show fastmail | head -n 1) \
     -O $tmpfile
 
