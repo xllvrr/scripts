@@ -1,0 +1,11 @@
+#!/bin/bash
+
+case "$(printf "a selected area\\ncurrent window\\nfull screen" | fuzzel -d -b 282c34ff -s 000000ff -S 74bb80ff -t 74bb80ff -C 74bba4ff -p 'Screenshot which area?')" in
+    "a selected area") 
+        hyprshot -o $HOME/shots -f pic-selected-$(date +%y%m%d-%H%M-%S).png -m region;;
+	"current window") 
+        hyprshot -o $HOME/shots -f pic-window-$(date +%y%m%d-%H%M-%S).png -m window;;
+	"full screen")
+        hyprshot -o $HOME/shots -f pic-fullscreen-$(date +%y%m%d-%H%M-%S).png -m output;;
+esac
+

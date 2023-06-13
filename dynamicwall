@@ -5,8 +5,7 @@ do
 
       PIC=($(find ~/.config/wallpapers -type f | shuf -n 2 --random-source=/dev/random))
 
-      swaymsg output "DP-1" bg "${PIC[0]}" fill > /dev/null
-      swaymsg output "DP-2" bg "${PIC[1]}" fill > /dev/null
+      swaybg -i "${PIC[0]}" -m fill > /dev/null
 
       sleep 60m
 
