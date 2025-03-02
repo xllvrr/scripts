@@ -1,4 +1,0 @@
-#!/bin/bash
-
-sleep 30
-hyperctl keyword windowrulev2 "workspace unset,LibreWolf"

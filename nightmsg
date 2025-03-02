@@ -1,5 +1,0 @@
-#!/bin/sh
-userid=$(id -u)
-DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$userid/bus"
-export DBUS_SESSION_BUS_ADDRESS
-/usr/bin/notify-send -t 3000 "Time to Turn in for the Night" "You gotta wake up at like 5 tomorrow morning"

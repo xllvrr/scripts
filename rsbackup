@@ -1,3 +1,0 @@
-#!/bin/sh
-
-sudo rsync -aAXv --delete --exclude=/dev/* --exclude=/proc/* --exclude=/sys/* --exclude=/tmp/* --exclude=/run/* --exclude=/mnt/* --exclude=/media/* --exclude="swapfile" --exclude="lost+found" --exclude=".cache" --exclude=".librewolf" --exclude=".cargo/" --exclude=".gradle/" --exclude="go/" --exclude=".SteamCloud/" --exclude=".local/share/Trash" / /mnt/data/ArchBackup/

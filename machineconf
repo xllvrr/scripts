@@ -1,6 +1,0 @@
-#!/bin/sh
-
-case $HOSTNAME in
-    (archmain) cp -f ~/.config/alacritty/alacrittymain.yml ~/.config/alacritty/alacritty.yml && cp -f ~/.config/rofi/configmain.rasi ~/.config/rofi/config.rasi && cp -f ~/.config/fcitx5/conf/uimain.conf ~/.config/fcitx5/conf/classicui.conf ;;
-    (archthink) cp -f ~/.config/alacritty/alacrittythink.yml ~/.config/alacritty/alacritty.yml && cp -f ~/.config/rofi/configthink.rasi ~/.config/rofi/config.rasi && cp -f ~/.config/fcitx5/conf/uithink.conf ~/.config/fcitx5/conf/classicui.conf ;;
-esac

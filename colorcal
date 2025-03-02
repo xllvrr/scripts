@@ -1,3 +1,0 @@
-#!/bin/sh
-
-/usr/bin/xcalib -d :0 /usr/share/color/icc/Prism_X340.icm
