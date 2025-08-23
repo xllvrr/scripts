@@ -1,8 +1,0 @@
-#!/bin/sh
-
-while true; do
-    xdotool key r
-    sleep 0.3
-    xdotool key e
-    sleep 3.2
-done
